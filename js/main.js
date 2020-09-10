@@ -20,7 +20,6 @@ function start() {
 
 function tahmin_et() {
   var tahmin = input.value;
-  console.log(rnd);
   if (!(tahmin == "" || tahmin == null) && tahmin >= 0 && tahmin <= 1000) {
     if (hak == 0) {
       alert("Hakkınız Bitmiştir. Sayı " + rnd + " Olmalıydı :)");
