@@ -21,7 +21,9 @@ function start() {
 function tahmin_et() {
   var tahmin = input.value;
   if (!(tahmin == "" || tahmin == null) && tahmin >= 0 && tahmin <= 1000) {
+    hak -= 1;
     if (hak == 0) {
+      kalan_hak.innerText = hak;
       alert("Hakkınız Bitmiştir. Sayı " + rnd + " Olmalıydı :)");
       btn_tahmin_et.disabled = true;
     } else {
@@ -40,7 +42,6 @@ function tahmin_et() {
         kalan_hak.style.color = "red";
       }
 
-      hak--;
       kalan_hak.innerText = hak;
       input.value = "";
       input.focus();
