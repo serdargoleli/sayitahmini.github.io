@@ -22,6 +22,7 @@ function tahmin_et() {
   if (!(tahmin == "" || tahmin == null) && tahmin >= 0 && tahmin <= 1000) {
     if (rnd == tahmin) {
       alert("Tebrikler Bildiniz...");
+      btn_tahmin_et.disabled = true;
     }
     if (rnd > tahmin) {
       small_number.innerText = tahmin;
