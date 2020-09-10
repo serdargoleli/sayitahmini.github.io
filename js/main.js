@@ -38,10 +38,11 @@ function tahmin_et() {
     hak--;
     kalan_hak.innerText = hak;
     if (hak == 0) {
-      alert("Hakkınız Bitmiştir.");
+      alert("Hakkınız Bitmiştir. Sayı "+ rnd +" Olmalıydı :)" );
       btn_tahmin_et.disabled = true;
       input.value = "";
     }
+    input.value="";
   } else {
     alert("Lütfen Geçerli Bir Sayı Giriniz...");
   }
