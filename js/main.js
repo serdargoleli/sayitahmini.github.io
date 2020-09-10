@@ -15,35 +15,37 @@ function start() {
   btn_tahmin_et.disabled = false;
   kalan_hak.style.color = "green";
   input.value = "";
+  input.focus();
 }
 
 function tahmin_et() {
   var tahmin = input.value;
+  console.log(rnd);
   if (!(tahmin == "" || tahmin == null) && tahmin >= 0 && tahmin <= 1000) {
-    if (rnd == tahmin) {
-      alert("Tebrikler Bildiniz...");
-      btn_tahmin_et.disabled = true;
-    }
-    if (rnd > tahmin) {
-      small_number.innerText = tahmin;
-    }
-    if (rnd < tahmin) {
-      big_number.innerText = tahmin;
-    }
-
-    if (hak > 5) {
-      kalan_hak.style.color = "green";
-    } else {
-      kalan_hak.style.color = "red";
-    }
-    hak--;
-    kalan_hak.innerText = hak;
     if (hak == 0) {
-      alert("Hakkınız Bitmiştir. Sayı "+ rnd +" Olmalıydı :)" );
+      alert("Hakkınız Bitmiştir. Sayı " + rnd + " Olmalıydı :)");
       btn_tahmin_et.disabled = true;
+    } else {
+      if (rnd == tahmin) {
+        alert("Tebrikler Bildiniz...");
+        btn_tahmin_et.disabled = true;
+      } else if (rnd > tahmin) {
+        small_number.innerText = tahmin;
+      } else if (rnd < tahmin) {
+        big_number.innerText = tahmin;
+      }
+
+      if (hak > 5) {
+        kalan_hak.style.color = "green";
+      } else {
+        kalan_hak.style.color = "red";
+      }
+
+      hak--;
+      kalan_hak.innerText = hak;
       input.value = "";
+      input.focus();
     }
-    input.value="";
   } else {
     alert("Lütfen Geçerli Bir Sayı Giriniz...");
   }
