@@ -1,0 +1,39 @@
+*,
+*:focus {
+  outline: none !important;
+  box-shadow: 0 !important;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: #efefef;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#kalan_hak {
+  color: green;
+}
+
+.game-box {
+  padding: 20px 30px;
+  box-shadow: 0 0 14px #0000003b;
+  border-radius: 0.25rem;
+  background: #fff;
+}
+.game-box input {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.game-box input:focus {
+  box-shadow: none;
+  border-color: grey;
+}
+.game-box p {
+  text-align: center;
+  font-size: 1.3rem;
+}
