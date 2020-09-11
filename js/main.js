@@ -49,10 +49,6 @@ function tahmin_et() {
     }
     input.value = "";
     input.focus();
-
-    console.log(hak);
-    console.log(rnd);
-
     hak--;
     kalan_hak.innerText = hak;
   } else {
