@@ -3,7 +3,7 @@ var big_number = document.getElementById("big_number");
 var kalan_hak = document.getElementById("kalan_hak");
 var input = document.getElementById("input");
 var btn_tahmin_et = document.getElementById("tahmit_et");
-var hak = 10;
+var hak;
 var rnd = Math.floor(Math.random() * 1000 + 1);
 
 function start() {
@@ -21,31 +21,40 @@ function start() {
 function tahmin_et() {
   var tahmin = input.value;
   if (!(tahmin == "" || tahmin == null) && tahmin >= 0 && tahmin <= 1000) {
-    hak -= 1;
-    if (hak == 0) {
-      kalan_hak.innerText = hak;
-      alert("Hakkınız Bitmiştir. Sayı " + rnd + " Olmalıydı :)");
-      btn_tahmin_et.disabled = true;
-    } else {
+    if (hak > 1) {
       if (rnd == tahmin) {
         alert("Tebrikler Bildiniz...");
         btn_tahmin_et.disabled = true;
-      } else if (rnd > tahmin) {
+      }
+      if (rnd > tahmin) {
         small_number.innerText = tahmin;
-      } else if (rnd < tahmin) {
+      }
+      if (rnd < tahmin) {
         big_number.innerText = tahmin;
       }
-
-      if (hak > 5) {
-        kalan_hak.style.color = "green";
+    } else if (hak == 1) {
+      if (rnd == tahmin) {
+        alert("Tebrikler Bildiniz...");
+        btn_tahmin_et.disabled = true;
       } else {
-        kalan_hak.style.color = "red";
+        alert("Hakkınız Bitmiştir. Sayı " + rnd + " Olmalıydı :)");
+        btn_tahmin_et.disabled = true;
       }
-
-      kalan_hak.innerText = hak;
-      input.value = "";
-      input.focus();
     }
+
+    if (hak > 5) {
+      kalan_hak.style.color = "green";
+    } else {
+      kalan_hak.style.color = "red";
+    }
+    input.value = "";
+    input.focus();
+
+    console.log(hak);
+    console.log(rnd);
+
+    hak--;
+    kalan_hak.innerText = hak;
   } else {
     alert("Lütfen Geçerli Bir Sayı Giriniz...");
   }
